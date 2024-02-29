@@ -26,6 +26,7 @@ namespace DocuSign.eSign.Client
 
         public SystemNetHttpClient(HttpClient _client = null)
         {
+            ServicePointManager.SetTcpKeepAlive(true, 150000, 150000); // set keep alive every two minutes
             httpClient = _client ?? new HttpClient();
         }
 
